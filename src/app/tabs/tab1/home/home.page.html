@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="navController.back();navController.setDirection('back')">
+        <ion-icon slot="icon-only" name="arrow-back" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  @for(item of items;track $index){
+    <app-product-dumb item="{{item}}"></app-product-dumb>
+  }
+ 
+</ion-content>

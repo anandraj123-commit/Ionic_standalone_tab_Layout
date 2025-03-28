@@ -1,0 +1,38 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/tabs"  text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>sub-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">sub-page</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="ion-margin">
+    <ion-button expand="block" (click)="goBack()">Back</ion-button>
+  </div>
+  @if(items.length>0){
+    <ion-list class="ion-margin">
+      <ion-list-header>
+        Product Name
+      </ion-list-header>
+        @for(item of items;track $index){
+          <app-product-dumb [item]="item"></app-product-dumb>
+        }
+    </ion-list>
+  }
+  @else {
+    <p>List not Available</p>
+  }
+</ion-content>
+
+
+
+
+
