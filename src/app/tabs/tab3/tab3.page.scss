@@ -1,0 +1,9 @@
+ion-grid{
+    ion-col{
+        border:2px solid red;
+        --ion-grid-column-padding-sm:5px;
+        div{
+            font-size:5px;
+        }
+    }
+}

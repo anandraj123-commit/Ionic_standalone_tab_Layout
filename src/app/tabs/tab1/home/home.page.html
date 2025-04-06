@@ -1,23 +1,42 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-    <ion-buttons slot="start">
-      <ion-button (click)="navController.back();navController.setDirection('back')">
-        <ion-icon slot="icon-only" name="arrow-back" color="primary"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Native Plugins
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  @for(item of items;track $index){
-    <app-product-dumb item="{{item}}"></app-product-dumb>
-  }
- 
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card color="primary" (click)="navigateToNetwork()">
+          <ion-card-header class="ion-text-center">
+            Network
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card color="primary" (click)="share()">
+          <ion-card-header class="ion-text-center">
+            Share
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card color="primary" (click)="camera()">
+          <ion-card-header class="ion-text-center">
+            Camera
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <img id="imageElement" width="300" alt="Captured Image" *ngIf="selectImage"/>
+      <button (click)="sharePic()" *ngIf="selectImage">Share Image</button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+
